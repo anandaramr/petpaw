@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
-        trim:true,
-        required: true,
+        trim:true
     },
     username:{
         type:String,
@@ -13,17 +12,14 @@ const userSchema = new mongoose.Schema({
         trim:true,
     },
     phone:{
-        type:Number,
-        required:true,
+        type:Number
     },
     email: {
-        type: String,
-        required: true,
-        unique: true,
+        type: String
     },
     password: {
         type: String,
-        required: true,
+        required: true
     },
     category:{
         type:String,
@@ -38,13 +34,13 @@ const userSchema = new mongoose.Schema({
         immutable:true
     },
     dogs:{
-        type: mongoose.Schema.Types.ObjectId,
+        type: [mongoose.Schema.Types.ObjectId],
         ref: 'Dogs',
     },
     bio:{
-        type:text
+        type: String
     },
-    });
+});
 
 const User = mongoose.model('User', userSchema);
 
