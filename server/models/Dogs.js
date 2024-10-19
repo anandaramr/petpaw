@@ -13,11 +13,15 @@ const dogSchema = new mongoose.Schema({
         type:Date,
         required:true,
     },
+    userId:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+    },
     image:{
-        type:text
+        type:String,
     },
     bio:{
-        type:text
+        type:String
     },
     createdAt:{
         type:Date,
@@ -25,7 +29,7 @@ const dogSchema = new mongoose.Schema({
         immutable:true,
         default: new Date()
     }
-});
+})
 
 const Dog = mongoose.model('Dog', dogSchema);
 

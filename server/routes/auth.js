@@ -69,7 +69,7 @@ router.post('/refresh', (req,res) => {
 })
 
 function generateAccessToken(data) {
-    return jwt.sign(data, process.env.ACCESSKEY, { expiresIn: '20s' } )
+    return jwt.sign(data, process.env.ACCESSKEY, { expiresIn: '1d' } )
 }
 
 async function generateRefreshToken(data) {
