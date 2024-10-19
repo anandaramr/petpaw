@@ -1,8 +1,12 @@
+import { Routes, Route } from 'react-router-dom'
+
 
 function App() {
 
   return (
-    <div className="text-cyan-300">hii</div>
+    <Routes>
+      <Route path='/'element={<div>hii</div>} />
+    </Routes>
   )
 }
 
