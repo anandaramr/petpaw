@@ -73,19 +73,12 @@ router.get('/following/:userId', async (req,res) => {
 
 router.get('/followers/:userId', async (req, res) => {
     const userId = req.params.userId;
-    
-    // Check if the user exists
     const user = await User.findById(userId);
     if (!user) return res.status(404).json({ message: "User not found" });
-
     try {
-        // Find all following documents where userId matches the provided userId
         const followings = await Following.find({ userId }).select('selfId');
-        
-        // Get all selfIds
         const selfIds = followings.map(following => following.selfId);
         
-        // Fetch the user details for all selfIds
         const followers = await User.find({ _id: { $in: selfIds } }).select('username name _id');
 
         return res.status(200).json(followers);
