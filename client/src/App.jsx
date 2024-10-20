@@ -15,12 +15,9 @@ function App() {
       <Routes>
         <Route path='/'element={<Home />} />
         <Route path='/profile'element={<User/>} />
-        <Route path='*' element={<div className='font-poppins text-4xl font-medium flex h-svh justify-center items-center text-gray-700'>Page not found :{'('}</div>} />
-        <Route path='/signup' element={<SignUp CiUser={CiUser} 
-          RiLockPasswordFill={RiLockPasswordFill} 
-          MdEmail={MdEmail}/>}/>
-        <Route path='/login' element={<Login CiUser={CiUser} 
-          RiLockPasswordFill={RiLockPasswordFill} />}/>
+        <Route path='/signup' element={<SignUp CiUser={CiUser} RiLockPasswordFill={RiLockPasswordFill} MdEmail={MdEmail}/>}/>
+        <Route path='/login' element={<Login CiUser={CiUser} RiLockPasswordFill={RiLockPasswordFill} />}/>
+        <Route path='*' element={<div className='font-poppins text-4xl font-medium flex h-svh justify-center items-center text-gray-700'>Page not found :&#40;</div>} />
       </Routes>
     </AuthProvider>
   )
