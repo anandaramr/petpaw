@@ -22,10 +22,12 @@ export default function SignUp({ CiUser, RiLockPasswordFill, MdEmail }) {
   
   return (
     <div className="min-h-screen flex justify-center items-center bg-[#ca9e78] font-poppins relative overflow-hidden">
-      <div className="paw absolute w-24 h-24 bg-no-repeat bg-cover opacity-70 transition-transform duration-300 hover:scale-150" style={{ backgroundImage: "url('petpaw\client\src\images')", top: "10%", left: "15%" }} data-speed="3"></div>
-      <div className="paw absolute w-24 h-24 bg-no-repeat bg-cover opacity-70 transition-transform duration-300 hover:scale-150" style={{ backgroundImage: "url('../images/paw.png')", top: "25%", right: "10%" }} data-speed="2"></div>
-      <div className="paw absolute w-24 h-24 bg-no-repeat bg-cover opacity-70 transition-transform duration-300 hover:scale-150" style={{ backgroundImage: "url('../images/paw.png')", bottom: "15%", left: "5%" }} data-speed="4"></div>
-      <div className="paw absolute w-24 h-24 bg-no-repeat bg-cover opacity-70 transition-transform duration-300 hover:scale-150" style={{ backgroundImage: "url('../images/paw.png')", bottom: "20%", right: "20%" }} data-speed="3"></div>
+      <div className=" absolute bg-custom-image w-24 h-24 bg-no-repeat right-14 top-10 bg-cover opacity-70 transition-transform duration-300 hover:scale-150"  data-speed="2"></div>
+      <div className=" absolute bg-custom-image w-24 h-24 bg-no-repeat left-10 top-24 bg-cover opacity-70 transition-transform duration-300 hover:scale-150"  data-speed="4"></div>
+      <div className=" absolute bg-custom-image bottom-14 right-24 w-24 h-24 bg-no-repeat  bg-cover opacity-70 transition-transform duration-300 hover:scale-150"  data-speed="3"></div>
+      <div className=" absolute bg-custom-image w-24 h-24 bg-no-repeat left-1/3 top-32 bg-cover opacity-70 transition-transform duration-300 hover:scale-150"  data-speed="1"></div>
+      <div className=" absolute bg-custom-image w-24 h-24 bg-no-repeat left-2/3 bottom-48 bg-cover opacity-70 transition-transform duration-300 hover:scale-150"  data-speed="5"></div>
+      <div className=" absolute bg-custom-image w-24 h-24 bg-no-repeat left-40 bottom-20 bg-cover opacity-70 transition-transform duration-300 hover:scale-150"  data-speed="5"></div>
 
       <div className="bg-[#fffbfb] p-8 shadow-lg rounded-lg w-[450px] flex flex-col">
         <h2 className="text-3xl font-bold text-center mb-6">Sign Up</h2>

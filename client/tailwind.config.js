@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'custom-image': "url('D:/make-a-ton/petpaw/client/src/images/pngegg.png')"
+      },
       fontFamily:{
         "poppins": ["Poppins","sans-serif"]
       }
