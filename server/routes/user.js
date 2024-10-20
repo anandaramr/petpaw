@@ -71,15 +71,26 @@ router.get('/following/:userId', async (req,res) => {
     .catch(err => res.status(500).json(err))
 })
 
-router.get('/followers/:userId', async (req,res) => {
-    const user = await User.findById(req.params.userId)
-    if(!user) return res.status(404).json({ message: "User not found" })
+router.get('/followers/:userId', async (req, res) => {
+    const userId = req.params.userId;
+    
+    // Check if the user exists
+    const user = await User.findById(userId);
+    if (!user) return res.status(404).json({ message: "User not found" });
 
-    await Following.find().where('userId').equals(user._id).select('selfId')
-    .populate('selfId')
-    .then(result => res.status(200).json(result.map(data => {
-        return {id: data.userId._id, username: data.userId.username, name: data.userId.name }
-    })))
-    .catch(err => res.status(400).json(err))
-})
+    try {
+        // Find all following documents where userId matches the provided userId
+        const followings = await Following.find({ userId }).select('selfId');
+        
+        // Get all selfIds
+        const selfIds = followings.map(following => following.selfId);
+        
+        // Fetch the user details for all selfIds
+        const followers = await User.find({ _id: { $in: selfIds } }).select('username name _id');
+
+        return res.status(200).json(followers);
+    } catch (err) {
+        return res.status(400).json(err);
+    }
+});
 module.exports = router
