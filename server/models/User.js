@@ -17,6 +17,9 @@ const userSchema = new mongoose.Schema({
     email: {
         type: String
     },
+    addresss:{
+        type:String
+    },
     password: {
         type: String,
         required: true
@@ -39,7 +42,7 @@ const userSchema = new mongoose.Schema({
     },
     bio:{
         type: String
-    },
+    }
 });
 
 const User = mongoose.model('User', userSchema);

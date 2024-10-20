@@ -13,6 +13,12 @@ app.use('/auth', authRouter)
 const userRouter = require('./routes/user')
 app.use('/user', userRouter)
 
+const dogRouter = require('./routes/dog')
+app.use('/dog',dogRouter)
+
+const postRouter = require('./routes/post')
+app.use('/post',postRouter)
+
 mongoose.set('strictQuery', true)
 mongoose.connect(process.env.URI)
 .then(() =>console.log('Connection established'))
